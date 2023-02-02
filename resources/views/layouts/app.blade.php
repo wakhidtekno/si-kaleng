@@ -67,7 +67,7 @@
               <div class="bg-white py-2 collapse-inner rounded">
               <h6 class="collapse-header">Data Master</h6>
               <a class="collapse-item " href="{{route('kaleng.index')}}">Kaleng</a>
-              <a class="collapse-item " href="{{route('munfik.index')}}">Munfik</a>
+              <a class="collapse-item " href="{{route('munfik.index')}}">Munfiq</a>
               </div>
           </div>
       </li>

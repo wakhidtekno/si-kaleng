@@ -1,15 +1,27 @@
 @extends('layouts.app')
-@section('title','Tambah Munfik')
-@section('page-heading','Tambah Munfik')
+@section('title','Tambah Munfiq')
+@section('page-heading','Tambah Munfiq')
 
 @section('content')
 <div class="row">
     <div class="col">
+        <div class="col mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Informasi</div>
+                            <div class="h5 mb-0">Setiap Munfiq hanya bisa memiliki 1 kaleng infaq, jika kaleng infaq tidak ada data silahkan tambahkan data kaleng baru terlebih dahulu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Munfik</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Munfiq</h6>
             </div>
-
             <div class="card-body">
                     @if (session()->has('pesan'))
                     <div class="alert alert-success alert-dismissible">

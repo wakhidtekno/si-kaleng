@@ -43,7 +43,7 @@ class KalengController extends Controller
 
         Kaleng::create($validateData);
 
-        return redirect()->back()->with('pesan',"Munfik dengan no register {$validateData['no_register']} sukses ditambahkan");
+        return redirect()->back()->with('pesan',"kaleng dengan no register {$validateData['no_register']} sukses ditambahkan");
 
     }
 

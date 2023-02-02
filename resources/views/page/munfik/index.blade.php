@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title','Data Munfik')
-@section('page-heading','Data Munfik')
+@section('title','Data Munfiq')
+@section('page-heading','Data Munfiq')
 
 @section('content')
 <div class="row">
     <div class="col">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Munfik</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Munfiq</h6>
             </div>
 
             <div class="card-body">
