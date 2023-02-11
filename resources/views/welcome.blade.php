@@ -75,10 +75,7 @@
 
                 <!-- About Section Button-->
                 <div class="text-center mt-4 h1">
-                    @php
-                    $total = App\Models\Saldo::orderBy('id','desc')->first()->total;
-                     @endphp
-                    Rp {{ number_format($total,2,',','.' )}}
+                    Rp {{ number_format($saldo,2,',','.' )}}
                 </div>
             </div>
         </section>

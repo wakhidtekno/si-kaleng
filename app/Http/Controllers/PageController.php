@@ -6,21 +6,36 @@ use Illuminate\Http\Request;
 use App\Models\Penerimaan;
 use App\Models\Penyaluran;
 use App\Models\Pesan;
+use App\Models\Saldo;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view ('page.home');
+        if(Saldo::all()->count() == 0)
+        {
+            $saldo = 0;
+        }
+        else{
+        $saldo = Saldo::orderBy('id','desc')->first()->total;
+        }
+        return view ('page.home',['saldo' => $saldo]);
     }
 
     public function guestHome()
     {
+        if(Saldo::all()->count() == 0)
+        {
+            $saldo = 0;
+        }
+        else{
+        $saldo = Saldo::orderBy('id','desc')->first()->total;
+        }
         $penerimaan = Penerimaan::where('status','terkonfirmasi')->orderBy('id','desc')->get();
         $penyaluran = Penyaluran::orderBy('id','desc')->get();
 
 
-        return view ('welcome', ['penerimaan' => $penerimaan, 'penyaluran' => $penyaluran]);
+        return view ('welcome', ['saldo' => $saldo, 'penerimaan' => $penerimaan, 'penyaluran' => $penyaluran]);
 
     }
 

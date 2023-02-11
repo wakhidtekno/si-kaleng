@@ -65,9 +65,14 @@ class PenerimaanController extends Controller
         DB::BeginTransaction();
         $penerimaan = Penerimaan::findOrFail($id);
         $kaleng = Kaleng::findOrFail($penerimaan->kaleng->id);
-
-        $saldo_sekarang = Saldo::orderBy('id','desc')->first();
-        $total_saldo = $saldo_sekarang->total + $penerimaan->jumlah;
+        if(Saldo::all()->count() == 0)
+        {
+            $saldo_sekarang = 0;
+            $total_saldo = $saldo_sekarang + $penerimaan->jumlah;
+        }else {
+            $saldo_sekarang = Saldo::orderBy('id','desc')->first();
+            $total_saldo = $saldo_sekarang->total + $penerimaan->jumlah;
+        }
 
 
         $saldo = Saldo::create([

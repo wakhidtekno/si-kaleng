@@ -27,10 +27,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Saldo</div>
-                      @php
-                          $total = App\Models\Saldo::orderBy('id','desc')->first()->total;
-                      @endphp
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp {{ number_format($total,2,',','.' )}}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">Rp {{ number_format($saldo,2,',','.' )}}</div>
                     </div>
                   </div>
                 </div>
